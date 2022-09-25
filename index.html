@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./dist/styles.css">
+  <title>Time tracking dashboard</title>
+
+</head>
+
+<body>
+  <div class="dashboard">
+    <div class="dashboard__grid">
+      <div class="dashboard__grid__user-info">
+        <div class="dashboard__grid__user-info__top">
+          <div class="dashboard__grid__user-info__top__user-picture">
+            <img src="./images/image-jeremy.png" alt="user">
+          </div>
+          <div class="dashboard__grid__user-info__top__username">
+            <p>Report for</p>
+            <h1>Jeremy Robson</h1>
+          </div>
+        </div>
+        <div class="dashboard__grid__user-info__selection-wrapper">
+          <div class="dashboard__grid__user-info__selection-wrapper__daily" onclick="selectPeriod(1)">
+            Daily
+          </div>
+          <div class="dashboard__grid__user-info__selection-wrapper__weekly selected" onclick="selectPeriod(2)">
+            Weekly
+          </div>
+          <div class="dashboard__grid__user-info__selection-wrapper__monthly" onclick="selectPeriod(3)">
+            Monthly
+          </div>
+        </div>
+      </div>
+      <div class="dashboard__grid__category work">
+        <div class="dashboard__grid__category__banner"></div>
+        <div class="dashboard__grid__category__main">
+          <div class="dashboard__grid__category__main__title">
+            <h2>Work</h2>
+            <p><svg width="21" height="5" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M2.5 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Z"
+                  fill="#BBC0FF" fill-rule="evenodd" /></svg></p>
+          </div>
+          <div class="dashboard__grid__category__main__hours work-hours">
+            32hrs
+          </div>
+          <div class="dashboard__grid__category__main__last-hours work-last">
+            Last Week - 36hrs
+          </div>
+        </div>
+      </div>
+      <div class="dashboard__grid__category play">
+        <div class="dashboard__grid__category__banner"></div>
+        <div class="dashboard__grid__category__main">
+          <div class="dashboard__grid__category__main__title">
+            <h2>Play</h2>
+            <p><svg width="21" height="5" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M2.5 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Z"
+                  fill="#BBC0FF" fill-rule="evenodd" /></svg></p>
+          </div>
+          <div class="dashboard__grid__category__main__hours play-hours">
+            10hrs
+          </div>
+          <div class="dashboard__grid__category__main__last-hours play-last">
+            Last Week - 8hrs
+          </div>
+        </div>
+      </div>
+      <div class="dashboard__grid__category study">
+        <div class="dashboard__grid__category__banner"></div>
+        <div class="dashboard__grid__category__main">
+          <div class="dashboard__grid__category__main__title">
+            <h2>Study</h2>
+            <p><svg width="21" height="5" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M2.5 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Z"
+                  fill="#BBC0FF" fill-rule="evenodd" /></svg></p>
+          </div>
+          <div class="dashboard__grid__category__main__hours study-hours">
+            4hrs
+          </div>
+          <div class="dashboard__grid__category__main__last-hours study-last">
+            Last Week - 7hrs
+          </div>
+        </div>
+      </div>
+      <div class="dashboard__grid__category exercise">
+        <div class="dashboard__grid__category__banner"></div>
+        <div class="dashboard__grid__category__main">
+          <div class="dashboard__grid__category__main__title">
+            <h2>Exercise</h2>
+            <p><svg width="21" height="5" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M2.5 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Z"
+                  fill="#BBC0FF" fill-rule="evenodd" /></svg></p>
+          </div>
+          <div class="dashboard__grid__category__main__hours exercise-hours">
+            4hrs
+          </div>
+          <div class="dashboard__grid__category__main__last-hours exercise-last">
+            Last Week - 5hrs
+          </div>
+        </div>
+      </div>
+      <div class="dashboard__grid__category social">
+        <div class="dashboard__grid__category__banner"></div>
+        <div class="dashboard__grid__category__main">
+          <div class="dashboard__grid__category__main__title">
+            <h2>Social</h2>
+            <p><svg width="21" height="5" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M2.5 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Z"
+                  fill="#BBC0FF" fill-rule="evenodd" /></svg></p>
+          </div>
+          <div class="dashboard__grid__category__main__hours social-hours">
+            5hrs
+          </div>
+          <div class="dashboard__grid__category__main__last-hours social-last">
+            Last Week - 10hrs
+          </div>
+        </div>
+      </div>
+      <div class="dashboard__grid__category self-care">
+        <div class="dashboard__grid__category__banner"></div>
+        <div class="dashboard__grid__category__main">
+          <div class="dashboard__grid__category__main__title">
+            <h2>Self Care</h2>
+            <p><svg width="21" height="5" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M2.5 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Z"
+                  fill="#BBC0FF" fill-rule="evenodd" /></svg></p>
+          </div>
+          <div class="dashboard__grid__category__main__hours self-care-hours">
+            2hrs
+          </div>
+          <div class="dashboard__grid__category__main__last-hours self-care-last">
+            Last Week - 2hrs
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="./js/app.js"></script>
+
+</body>
+
+</html>

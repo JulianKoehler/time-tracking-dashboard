@@ -1,0 +1,98 @@
+@media (max-width: 430px) {
+    .dashboard {
+        align-items: flex-start;
+        height: 100%;
+        padding: 2em 0 2.5em 0;
+
+        &__grid {
+            grid-template-columns: 1fr;
+
+            &__user-info {
+                grid-row: 1;
+                height: 200px;
+                width: 350px;
+
+                &__top {
+                    display: flex;
+                    justify-content: space-around;
+                    align-items: center;
+                    max-width: inherit;
+                    padding: 1.5em;
+
+                    &__user-picture {
+                        margin-bottom: 0;
+                        width: 70px;
+                        margin-right: 1.5em;
+                    }
+
+                    &__username {
+
+                        h1 {
+                            font-size: 1.5rem;
+                        }
+                    }
+                }
+
+                &__selection-wrapper {
+                    height: 20%;
+                    flex-direction: row;
+                    align-items: center;
+                    padding: 0;
+                }
+            }
+
+            &__category {
+                height: 160px;
+                width: 350px;
+
+
+                &__banner {
+                    height: 26%;
+                }
+
+                &__main {
+                    position: relative;
+                    display: flex;
+                    flex-direction: column;
+
+                    &__title {
+                        width: 100%;
+                    }
+
+                    &__hours {
+                        font-size: 24px;
+                    }
+
+                    &__last-hours {
+                        width: 100%;
+                        position: absolute;
+                        left: 215px;
+                        bottom: 35px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 360px) {
+    .dashboard {
+        transform: scale(0.9);
+        margin: -4em 0;
+    }
+
+    body {
+        background-color: var(--very-dark-blue);
+    }
+}
+
+@media (max-width: 330px) {
+    .dashboard {
+        transform: scale(0.8);
+        margin: -8em 0;
+    }
+
+    body {
+        background-color: var(--very-dark-blue);
+    }
+}
