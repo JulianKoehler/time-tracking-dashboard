@@ -64,10 +64,11 @@
                     }
 
                     &__last-hours {
-                        width: 100%;
+                        max-width: 100%;
                         position: absolute;
                         left: 215px;
                         bottom: 35px;
+                        display: inline-block;
                     }
                 }
             }
